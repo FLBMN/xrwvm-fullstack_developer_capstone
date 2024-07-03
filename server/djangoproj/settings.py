@@ -28,8 +28,8 @@ SECRET_KEY =\
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS=['localhost','https://florianbrueg-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai', 'https://florianbrueg-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/admin/login/?next=/admin/']
-CSRF_TRUSTED_ORIGINS=['https://florianbrueg-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai', 'https://florianbrueg-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/admin/login/?next=/admin/', 'https://florianbrueg-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai']
+ALLOWED_HOSTS=['https://florianbrueg-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai','localhost','https://florianbrueg-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai', 'https://florianbrueg-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/admin/login/?next=/admin/']
+CSRF_TRUSTED_ORIGINS=['https://florianbrueg-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai','https://florianbrueg-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai', 'https://florianbrueg-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/admin/login/?next=/admin/', 'https://florianbrueg-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai']
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [],
