@@ -1,6 +1,5 @@
-# server/djangoapp/populate.py
-
 from .models import CarMake, CarModel
+
 
 def initiate():
     car_make_data = [
@@ -10,6 +9,7 @@ def initiate():
         {"name": "Kia", "description": "Great cars. Korean technology"},
         {"name": "Toyota", "description": "Great cars. Japanese technology"},
     ]
+    
     car_make_instances = []
     for data in car_make_data:
         car_make_instances.append(
@@ -37,6 +37,7 @@ def initiate():
         {"name": "Kluger", "type": "SUV", "year": 2023, "car_make": car_make_instances[4]},
         # Add more CarModel instances as needed
     ]
+    
     for data in car_model_data:
         CarModel.objects.create(
             name=data['name'],
@@ -44,6 +45,7 @@ def initiate():
             type=data['type'],
             year=data['year']
         )
+
 
 if __name__ == '__main__':
     initiate()
