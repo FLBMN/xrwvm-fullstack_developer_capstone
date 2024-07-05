@@ -1,6 +1,7 @@
 # Uncomment the required imports before adding the code
 from django.http import JsonResponse
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.models import User  # Ensure User model is imported
 import logging
 import json
 from django.views.decorators.csrf import csrf_exempt
@@ -16,11 +17,11 @@ def login_user(request):
     username = data['userName']
     password = data['password']
     user = authenticate(username=username, password=password)
-    data = {"userName": username}
+    response_data = {"userName": username}
     if user is not None:
         login(request, user)
-        data["status"] = "Authenticated"
-    return JsonResponse(data)
+        response_data["status"] = "Authenticated"
+    return JsonResponse(response_data)
 
 def logout_request(request):
     data = {"userName": ""}
@@ -45,11 +46,11 @@ def registration(request):
     if not username_exist:
         user = User.objects.create_user(username=username, first_name=first_name, last_name=last_name, password=password, email=email)
         login(request, user)
-        data = {"userName": username, "status": "Authenticated"}
-        return JsonResponse(data)
+        response_data = {"userName": username, "status": "Authenticated"}
+        return JsonResponse(response_data)
     else:
-        data = {"userName": username, "error": "Already Registered"}
-        return JsonResponse(data)
+        response_data = {"userName": username, "error": "Already Registered"}
+        return JsonResponse(response_data)
 
 def get_cars(request):
     count = CarMake.objects.count()
@@ -93,3 +94,4 @@ def add_review(request):
             return JsonResponse({"status": 401, "message": f"Error in posting review: {str(e)}"})
     else:
         return JsonResponse({"status": 403, "message": "Unauthorized"})
+
