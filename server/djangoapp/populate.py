@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand
 from your_app_name.models import CarMake, CarModel
 
+
 class Command(BaseCommand):
     help = 'Populate the database with initial CarMake and CarModel data'
 
