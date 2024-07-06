@@ -19,12 +19,12 @@ class CarMake(models.Model):
 class CarModel(models.Model):
     """Model representing a car model."""
     car_make = models.ForeignKey(
-        CarMake, 
-        on_delete=models.CASCADE, 
+        CarMake,
+        on_delete=models.CASCADE,
         related_name='models'
     )
     name = models.CharField(max_length=100, verbose_name="Car Model Name")
-    
+
     CAR_TYPES = [
         ('SEDAN', 'Sedan'),
         ('SUV', 'SUV'),
@@ -32,9 +32,9 @@ class CarModel(models.Model):
         # Add more choices as required
     ]
     type = models.CharField(
-        max_length=10, 
-        choices=CAR_TYPES, 
-        default='SUV', 
+        max_length=10,
+        choices=CAR_TYPES,
+        default='SUV',
         verbose_name="Car Type"
     )
     year = models.IntegerField(
