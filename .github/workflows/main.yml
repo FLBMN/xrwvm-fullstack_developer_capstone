@@ -13,8 +13,8 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v3
-    
+      uses: actions/checkout@v2
+   
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -36,17 +36,22 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
     - name: Install Node.js
       uses: actions/setup-node@v2
       with:
         node-version: 14
 
-    - name: Install JSHint
-      run: npm install jshint --global
+    - name: Install ESLint
+      run: npm install eslint --global
+
+    - name: Configure ESLint
+      run: |
+        eslint --init --max-warnings=0 --format=codeframe
+        # Additional configuration steps if needed
 
     - name: Run Linter
       run: |
-        find ./server/database -name "*.js" -exec jshint {} +
+        eslint ./server/database
         echo "Linted all the JavaScript files successfully"
