@@ -69,4 +69,4 @@ class Command(BaseCommand):
             )
 
         self.stdout.write(self.style.
-                          SUCCESS('Successfully populated the database with car data'))
+        SUCCESS('Successfully populated the database with car data'))
