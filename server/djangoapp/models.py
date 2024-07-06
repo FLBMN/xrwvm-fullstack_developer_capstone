@@ -1,13 +1,11 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
-
 # Car Make model
 class CarMake(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
 
-    
     def __str__(self):
         return self.name
             
@@ -30,4 +28,3 @@ class CarModel(models.Model):
 
     def __str__(self):
         return self.name
-
