@@ -64,8 +64,8 @@ def get_cars(request):
     if count == 0:
         initiate()
     car_models = CarModel.objects.select_related('car_make')
-    cars = [{"CarModel": car_model.name, "CarMake": car_model.car_make.name}
-    for car_model in car_models]
+    cars = [{"CarModel": car_model.name, "CarMake":
+             car_model.car_make.name} for car_model in car_models]
     return JsonResponse({"CarModels": cars})
 
 
@@ -105,7 +105,8 @@ def add_review(request):
             return JsonResponse({"status": 200})
         except Exception as e:
             logger.error(f"Error in posting review: {str(e)}")
-            return JsonResponse({"status": 401,
-            "message": f"Error in posting review: {str(e)}"})
+            return JsonResponse({"status":
+                                 401,"message":
+                                 f"Error in posting review: {str(e)}"})
     else:
         return JsonResponse({"status": 403, "message": "Unauthorized"})
