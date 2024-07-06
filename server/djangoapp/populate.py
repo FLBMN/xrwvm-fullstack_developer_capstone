@@ -7,11 +7,14 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         car_make_data = [
-            {"name": "NISSAN", "description": "Great cars. Japanese technology"},
-            {"name": "Mercedes", "description": "Great cars. German technology"},
+            {"name": "NISSAN", "description": 
+             "Great cars. Japanese technology"},
+            {"name": "Mercedes", "description": 
+             "Great cars. German technology"},
             {"name": "Audi", "description": "Great cars. German technology"},
             {"name": "Kia", "description": "Great cars. Korean technology"},
-            {"name": "Toyota", "description": "Great cars. Japanese technology"},
+            {"name": "Toyota", "description": 
+             "Great cars. Japanese technology"},
         ]
 
         car_make_instances = []
