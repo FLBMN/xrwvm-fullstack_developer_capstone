@@ -5,7 +5,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 backend_url = os.getenv('backend_url', default="http://localhost:3030")
-sentiment_analyzer_url = os.getenv('sentiment_analyzer_url', default="http://localhost:5050/")
+sentiment_analyzer_url = os.getenv('sentiment_analyzer_url',
+default="http://localhost:5050/")
+
 
 # Ensure two blank lines before function definition
 def get_request(endpoint, **kwargs):
@@ -23,6 +25,7 @@ def get_request(endpoint, **kwargs):
     except Exception as e:
         print(f"Network exception occurred: {e}")
 
+
 # Ensure two blank lines before function definition
 def analyze_review_sentiments(text):
     request_url = f"{sentiment_analyzer_url}analyze/{text}"
@@ -31,6 +34,7 @@ def analyze_review_sentiments(text):
         return response.json()
     except Exception as e:
         print(f"Network exception occurred: {e}")
+
 
 # Ensure two blank lines before function definition
 def post_review(data_dict):
@@ -44,5 +48,3 @@ def post_review(data_dict):
 
 # Ensure two blank lines before starting new block of code
 # Add code for posting review
-
-
