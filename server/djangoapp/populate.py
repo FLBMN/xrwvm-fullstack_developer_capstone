@@ -68,5 +68,8 @@ class Command(BaseCommand):
                 year=data['year']
             )
 
-        self.stdout.write(self.style.SUCCESS('Successfully populated the 
-        database with car data'))
+      self.stdout.write(
+          self.style.SUCCESS(
+              'Successfully populated the database with car data'
+    )
+)
