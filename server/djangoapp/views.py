@@ -15,7 +15,7 @@ from django.http import JsonResponse
 from django.contrib.auth import login, authenticate, logout
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.translation import gettext_lazy as _
-from .models import  CarModel, User
+from .models import  CarModel, CarMake
 from .populate import initiate
 from .restapis import get_request, analyze_review_sentiments, post_review
 
